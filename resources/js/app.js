@@ -1,11 +1,7 @@
-import { createApp } from "vue";
+import './bootstrap';
 
-const app = createApp({
-    data() {
-        return {
-            personnes: window.__PERSONNES__ || [],
-        };
-    },
-});
+import Alpine from 'alpinejs';
 
-app.mount("#app");
+window.Alpine = Alpine;
+
+Alpine.start();

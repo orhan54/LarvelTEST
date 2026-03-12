@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -9,7 +9,6 @@
     </a>
 
     <table class="table table-bordered table-striped">
-
         <thead class="table-dark">
             <tr>
                 <th>Nom</th>
@@ -25,9 +24,7 @@
                     <td>{{ $p->nom }}</td>
                     <td>{{ $p->prenom }}</td>
                     <td>{{ $p->email }}</td>
-
                     <td>
-
                         <a href="{{ route('personnes.edit', $p->id) }}" class="btn btn-warning btn-sm">
                             Modifier
                         </a>
@@ -35,19 +32,14 @@
                         <form action="{{ route('personnes.destroy', $p->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-
                             <button class="btn btn-danger btn-sm">
                                 Supprimer
                             </button>
-
                         </form>
-
                     </td>
-
                 </tr>
             @endforeach
         </tbody>
-
     </table>
 
 @endsection
